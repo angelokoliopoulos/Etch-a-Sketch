@@ -69,7 +69,7 @@ function rainbowHandler() {
 
 document.querySelector("#erase").addEventListener("click", eraseGrid);
 rainbow.addEventListener("click", rainbowHandler);
-colorPick.addEventListener("input", changeColor);
+colorPick.addEventListener("mouseleave", changeColor);
 slide.addEventListener("input", changeSize);
 grid.addEventListener("mouseover", hover);
 document.addEventListener("DOMContentLoaded", createGrid(global.size));
