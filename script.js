@@ -42,6 +42,12 @@ function changeSize() {
   global.size = slide.value;
   createGrid(global.size);
 }
+function drag(e) {
+  if (e.buttons === 1 || e.buttons === 3) {
+    // check if left or right mouse button is still pressed down
+    hover(e);
+  }
+}
 
 function eraseGrid() {
   grid.innerHTML = "";
@@ -71,5 +77,6 @@ document.querySelector("#erase").addEventListener("click", eraseGrid);
 rainbow.addEventListener("click", rainbowHandler);
 colorPick.addEventListener("mouseleave", changeColor);
 slide.addEventListener("input", changeSize);
-grid.addEventListener("mouseover", hover);
+grid.addEventListener("mousedown", hover);
+document.body.addEventListener("mousemove", drag);
 document.addEventListener("DOMContentLoaded", createGrid(global.size));
