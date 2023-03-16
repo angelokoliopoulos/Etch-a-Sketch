@@ -25,7 +25,7 @@ function createGrid(gridNumber) {
   grid.innerHTML = gridItems;
 }
 
-function hover(e) {
+function paintGrid(e) {
   if (e.target.classList.contains("grid-item")) {
     e.target.style.backgroundColor = global.color;
     if (rainbowClicked) {
@@ -77,6 +77,6 @@ document.querySelector("#erase").addEventListener("click", eraseGrid);
 rainbow.addEventListener("click", rainbowHandler);
 colorPick.addEventListener("mouseleave", changeColor);
 slide.addEventListener("input", changeSize);
-grid.addEventListener("mousedown", hover);
+grid.addEventListener("mousedown", paintGrid);
 document.body.addEventListener("mousemove", drag);
 document.addEventListener("DOMContentLoaded", createGrid(global.size));
