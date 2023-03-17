@@ -45,7 +45,7 @@ function changeSize() {
 function drag(e) {
   if (e.buttons === 1 || e.buttons === 3) {
     // check if left or right mouse button is still pressed down
-    hover(e);
+    paintGrid(e);
   }
 }
 
@@ -80,3 +80,6 @@ slide.addEventListener("input", changeSize);
 grid.addEventListener("mousedown", paintGrid);
 document.body.addEventListener("mousemove", drag);
 document.addEventListener("DOMContentLoaded", createGrid(global.size));
+
+grid.addEventListener("mouseup", () => (isDrawing = false));
+// grid.addEventListener("mouseout", () => (isDrawing = false));
